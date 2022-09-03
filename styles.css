@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato' sans-serif;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; */
+    overflow-x: hidden;
+    margin: 0;
+    /* padding: 20px; */
+    background-color: #333;
+    /* color: #222; */
+}
+.container {
+    /* background-color: #fafafa; */
+    background-color: #222;
+    color: #04f4e4cc;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+    line-height: 1.8rem;
+}
+.container.show-nav + nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+.container.show-nav .circle{ /*when the container has show-nav applied to it, then, we wanna style the circle*/
+    transform: rotate(-70deg);
+}
+.circle-container {
+    position: fixed;
+    top: -100px; /*-100px cos we did 200px for the height and width below*/
+    left: -100px;
+}
+.circle {
+    background-color: #0789F9;
+    height: 200px; 
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    z-index: -999;
+    transition: transform 0.5s linear;
+}
+
+.circle button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+.circle button:focus {
+    outline: none;
+}
+.circle button#open {
+    left: 60%;
+}
+.circle button#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+nav ul {
+    list-style: none;
+    padding-left: 30px;
+}
+nav ul li {
+    text-transform: uppercase;
+    color: white;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+}
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #0789F9;
+}
+nav ul li + li {  /*+li - the direct li after that*/
+    margin-left: 15px; /*the lis after the initial li is gonna have a ml applied to it*/
+    transform: translateX(-150%);
+}
+nav ul li + li + li {
+    margin-left: 30px; /*anything after the second li will have a ml*/
+    transform: translateX(-200%);
+}
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.content img {
+    max-width: 100%;
+}
+.content h1 {
+    margin: 0;
+}
+.content small {
+    /* color: #555; */
+    color: #04f4e4cc;
+    font-style: italic;
+    font-size: 18px;
+}
+.content p {
+    /* color: #333; */
+    color: #04f4e4cc;
+    line-height: 1.8rem;
+}
+.content li {
+    margin-bottom: 10px;
+    color: #04f4e4cc;
+    line-height: 1.8rem;
+}
+.content h1, h2, b {
+    color: #14f3e4;
+}
